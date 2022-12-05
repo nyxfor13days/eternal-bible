@@ -1,17 +1,19 @@
+// Expo Imports
 import { StatusBar } from "expo-status-bar";
+
+// Navigation Imports
+import type { RootParams } from "./@types/navigation";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-// Screen Imports
-import Home from "./screens/Home";
+import { Home } from "./screens";
 
 // Stack Navigator
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootParams>();
 
 export default () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
 
