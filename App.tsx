@@ -9,7 +9,7 @@ import {
   createNativeStackNavigator,
   NativeStackNavigationOptions,
 } from "@react-navigation/native-stack";
-import { Home } from "./screens";
+import { Home, Login } from "./screens";
 
 // NativeBase Imports
 import { NativeBaseProvider } from "native-base";
@@ -38,12 +38,14 @@ export default () => {
   return (
     <NativeBaseProvider theme={theme}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home" screenOptions={screenOptions}>
+        <Stack.Navigator initialRouteName="Login" screenOptions={screenOptions}>
           <Stack.Screen
             name="Home"
             component={Home}
             options={{ headerTitle: "Eternal Bible" }}
           />
+
+          <Stack.Screen name="Login" component={Login} />
         </Stack.Navigator>
 
         <StatusBar style="light" />
