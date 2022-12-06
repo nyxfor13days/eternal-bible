@@ -1,9 +1,10 @@
-import { Text, View } from "react-native";
+import { Text } from "native-base";
+import { ScreenWrapper } from "../components";
 
 export default () => {
   return (
-    <View>
-      <Text>Home</Text>
-    </View>
+    <ScreenWrapper>
+      <Text color="gray.200">Home</Text>
+    </ScreenWrapper>
   );
 };

@@ -1,5 +1,6 @@
 // Expo Imports
 import { StatusBar } from "expo-status-bar";
+import * as SplashScreen from "expo-splash-screen";
 
 // Navigation Imports
 import type { RootParams } from "./@types/navigation";
@@ -8,26 +9,23 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Home } from "./screens";
 
 // NativeBase Imports
-import { NativeBaseProvider, View } from "native-base";
+import { NativeBaseProvider } from "native-base";
 import theme from "./theme";
-import loadFonts from "./utils/loadFonts";
 
 // Stack Navigator
 const Stack = createNativeStackNavigator<RootParams>();
 
-export default () => {
-  const { onLayoutRootView } = loadFonts();
+SplashScreen.preventAutoHideAsync();
 
+export default () => {
   return (
     <NativeBaseProvider theme={theme}>
       <NavigationContainer>
-        <View onLayout={onLayoutRootView}>
-          <Stack.Navigator initialRouteName="Home">
-            <Stack.Screen name="Home" component={Home} />
-          </Stack.Navigator>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={Home} />
+        </Stack.Navigator>
 
-          <StatusBar style="light" />
-        </View>
+        <StatusBar style="light" />
       </NavigationContainer>
     </NativeBaseProvider>
   );
