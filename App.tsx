@@ -45,7 +45,11 @@ export default () => {
             options={{ headerTitle: "Eternal Bible" }}
           />
 
-          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{ headerTitle: "Eternal Bible" }}
+          />
         </Stack.Navigator>
 
         <StatusBar style="light" />

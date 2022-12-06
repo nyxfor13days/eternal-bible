@@ -46,7 +46,7 @@ export default (props: IScreenWrapperProps) => {
   return (
     <ScrollView
       px={4}
-      _light={{ bg: "gray.900" }}
+      bg="gray.300"
       _dark={{ bg: "gray.900" }}
       onLayout={onLayoutRootView}>
       {children}
