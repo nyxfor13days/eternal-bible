@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useState } from "react";
 
 import type { IScreenWrapperProps } from "../@types/components";
-import { ScrollView } from "native-base";
+import { View } from "native-base";
 import * as SplashScreen from "expo-splash-screen";
 import { loadAsync } from "expo-font";
 
@@ -44,12 +44,13 @@ export default (props: IScreenWrapperProps) => {
   }
 
   return (
-    <ScrollView
+    <View
+      flex={1}
       px={4}
-      _light={{ bg: "gray.900" }}
+      bg="gray.300"
       _dark={{ bg: "gray.900" }}
       onLayout={onLayoutRootView}>
       {children}
-    </ScrollView>
+    </View>
   );
 };

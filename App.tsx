@@ -9,11 +9,12 @@ import {
   createNativeStackNavigator,
   NativeStackNavigationOptions,
 } from "@react-navigation/native-stack";
-import { Home } from "./screens";
+import { Home, Login } from "./screens";
 
 // NativeBase Imports
 import { NativeBaseProvider } from "native-base";
 import theme from "./theme";
+import colorModeManager from "./hooks/colorModeManager";
 
 // Stack Navigator
 const Stack = createNativeStackNavigator<RootParams>();
@@ -36,13 +37,19 @@ export default () => {
   };
 
   return (
-    <NativeBaseProvider theme={theme}>
+    <NativeBaseProvider theme={theme} colorModeManager={colorModeManager}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home" screenOptions={screenOptions}>
+        <Stack.Navigator initialRouteName="Login" screenOptions={screenOptions}>
           <Stack.Screen
             name="Home"
             component={Home}
             options={{ headerTitle: "Eternal Bible" }}
+          />
+
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{ headerTitle: "Login" }}
           />
         </Stack.Navigator>
 
