@@ -1,11 +1,29 @@
-import { Button, Heading, Icon, Text, VStack } from "native-base";
+import {
+  AspectRatio,
+  Button,
+  Heading,
+  Icon,
+  Image,
+  Text,
+  VStack,
+} from "native-base";
 import { AntDesign } from "@expo/vector-icons";
 import { ScreenWrapper } from "../components";
 
 export default () => {
   return (
     <ScreenWrapper>
-      <VStack py={10} space={6}>
+      <VStack py={12} space={6}>
+        <AspectRatio ratio={4 / 3}>
+          <Image
+            source={require("../assets/images/login-hero.jpg")}
+            alt="Login Hero"
+            size="100%"
+            resizeMode="cover"
+            borderRadius="xl"
+            shadow={1}
+          />
+        </AspectRatio>
         <Heading
           size="4xl"
           fontWeight="900"
@@ -23,6 +41,10 @@ export default () => {
 
         <Button leftIcon={<Icon as={AntDesign} name="google" />}>
           Login with Google
+        </Button>
+
+        <Button leftIcon={<Icon as={AntDesign} name="twitter" />}>
+          Login with Twitter
         </Button>
       </VStack>
     </ScreenWrapper>

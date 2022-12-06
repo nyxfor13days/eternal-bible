@@ -12,10 +12,13 @@ export default {
     baseStyle: {
       borderRadius: "full",
       height: 12,
+      size: "lg",
       _text: {
-        fontSize: "md",
         fontWeight: "bold",
         letterSpacing: "lg",
+      },
+      _stack: {
+        space: "2",
       },
     },
     defaultProps: {

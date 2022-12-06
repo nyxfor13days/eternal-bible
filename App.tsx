@@ -49,7 +49,7 @@ export default () => {
           <Stack.Screen
             name="Login"
             component={Login}
-            options={{ headerTitle: "Eternal Bible" }}
+            options={{ headerTitle: "Login" }}
           />
         </Stack.Navigator>
 
