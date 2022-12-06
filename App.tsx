@@ -11,10 +11,12 @@ import { Home } from "./screens";
 // NativeBase Imports
 import { NativeBaseProvider } from "native-base";
 import theme from "./theme";
+import { loadAsync } from "expo-font";
 
 // Stack Navigator
 const Stack = createNativeStackNavigator<RootParams>();
 
+// Prevent native splash screen from autohiding before App component declaration
 SplashScreen.preventAutoHideAsync();
 
 export default () => {

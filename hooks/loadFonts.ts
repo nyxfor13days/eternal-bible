@@ -1,9 +1,7 @@
-import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
-import { useCallback } from "react";
+import { loadAsync } from "expo-font";
 
-export default () => {
-  const [fontsLoaded] = useFonts({
+export default async () => {
+  await loadAsync({
     "Lato-Black": require("../assets/fonts/Lato-Black.ttf"),
     "Lato-BlackItalic": require("../assets/fonts/Lato-BlackItalic.ttf"),
     "Lato-Bold": require("../assets/fonts/Lato-Bold.ttf"),
@@ -15,12 +13,4 @@ export default () => {
     "Lato-Thin": require("../assets/fonts/Lato-Thin.ttf"),
     "Lato-ThinItalic": require("../assets/fonts/Lato-ThinItalic.ttf"),
   });
-
-  const onLayoutRootView = useCallback(async () => {
-    fontsLoaded && (await SplashScreen.hideAsync());
-  }, [fontsLoaded]);
-
-  !fontsLoaded && SplashScreen.preventAutoHideAsync();
-
-  return { fontsLoaded, onLayoutRootView };
 };
