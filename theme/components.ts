@@ -10,7 +10,7 @@ export default {
   },
   Button: {
     baseStyle: {
-      borderRadius: "xl",
+      borderRadius: "full",
       height: 12,
       _text: {
         fontSize: "md",
