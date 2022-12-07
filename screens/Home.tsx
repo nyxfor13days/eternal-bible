@@ -1,7 +1,6 @@
 import { Box, Button, Heading, HStack, Icon, Text, VStack } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 import { ScreenWrapper } from "../components";
-import { listFiles } from "../hooks/useBibles";
 
 export default () => {
   return (
