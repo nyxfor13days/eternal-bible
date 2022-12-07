@@ -1,13 +1,4 @@
-import {
-  Box,
-  Button,
-  Container,
-  Heading,
-  HStack,
-  Icon,
-  Text,
-  VStack,
-} from "native-base";
+import { Box, Button, Heading, HStack, Icon, Text, VStack } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 import { ScreenWrapper } from "../components";
 
@@ -68,7 +59,7 @@ export default () => {
           </VStack>
         </Box>
 
-        <VStack mt={8} space={4}>
+        <VStack mt={6} space={4}>
           <Button leftIcon={<Icon as={Ionicons} name="ios-reader" />}>
             Start Reading
           </Button>
