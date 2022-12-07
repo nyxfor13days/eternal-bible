@@ -39,7 +39,7 @@ export default () => {
   return (
     <NativeBaseProvider theme={theme} colorModeManager={colorModeManager}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login" screenOptions={screenOptions}>
+        <Stack.Navigator initialRouteName="Home" screenOptions={screenOptions}>
           <Stack.Screen
             name="Home"
             component={Home}
