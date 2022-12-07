@@ -2,13 +2,17 @@
 import { useCallback, useEffect, useState } from "react";
 
 import type { IScreenWrapperProps } from "../@types/components";
-import { View } from "native-base";
+import { ScrollView } from "native-base";
 import * as SplashScreen from "expo-splash-screen";
 import { loadAsync } from "expo-font";
+import { RefreshControl } from "react-native";
+import useRefresh from "../hooks/useRefresh";
 
 export default (props: IScreenWrapperProps) => {
   const { children } = props;
   const [isReady, setIsReady] = useState(false);
+
+  const { refresh, onRefresh } = useRefresh();
 
   useEffect(() => {
     (async () => {
@@ -44,13 +48,16 @@ export default (props: IScreenWrapperProps) => {
   }
 
   return (
-    <View
+    <ScrollView
       flex={1}
       px={4}
       bg="gray.300"
       _dark={{ bg: "gray.900" }}
-      onLayout={onLayoutRootView}>
+      onLayout={onLayoutRootView}
+      refreshControl={
+        <RefreshControl refreshing={refresh} onRefresh={onRefresh} />
+      }>
       {children}
-    </View>
+    </ScrollView>
   );
 };
