@@ -26,6 +26,15 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "API_KEY": "AIzaSyAUYyLqJ8ruDCEyR2ZThOVxPmPrmDqsfzk",
+      "AUTH_DOMAIN": "eternal-bible.firebaseapp.com",
+      "PROJECT_ID": "eternal-bible",
+      "STORAGE_BUCKET": "eternal-bible.appspot.com",
+      "MESSAGING_SENDER_ID": "682846964710",
+      "APP_ID": "1:682846964710:web:e6c8456013c4f7b6c6e427",
+      "MEASUREMENT_ID": "G-B602F7VX7L"
     }
   }
 }
